@@ -34,11 +34,19 @@
             <div id="navbar" class="navbar-collapse collapse">
                 <ul class="nav navbar-nav navbar-right">
                     {% if user.is_authenticated %}
-                    <li><a href="{% url 'profile' %}">Profile</a></li>
-                    <li><a href="{% url 'logout' %}">Log Out</a></li>
+                    <li>
+                        <a href="{% url 'profile' %}">Profile</a>
+                    </li>
+                    <li>
+                        <a href="{% url 'logout' %}">Log Out</a>
+                    </li>
                     {% else %}
-                    <li><a href="{% url 'login' %}">Log In</a></li>
-                    <li><a href="{% url 'registration' %}">Register</a></li>
+                    <li>
+                        <a href="{% url 'login' %}">Log In</a>
+                    </li>
+                    <li>
+                        <a href="{% url 'registration' %}">Register</a>
+                    </li>
                     {% endif %}
                     <li>
                         <a href="{% url 'view_cart' %}">
@@ -48,7 +56,9 @@
                             {% endif %}
                         </a>
                     </li>
-                    <li><a href="#">total: €{{ total }}</a></li>
+                    <li>
+                        <a href="#">total: €{{ total }}</a>
+                    </li>
                 </ul>
             </div>
         </div>
@@ -77,6 +87,12 @@
 
     {% block page_content %}
     {% endblock %}
+
+    <footer>
+        <div class="container">
+            <p>Made by Tim Nelson</p>
+        </div>
+    </footer>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
