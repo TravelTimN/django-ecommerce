@@ -1,12 +1,12 @@
-from django.conf.urls import url, include
+from django.urls import include, path
 from accounts import urls_reset
 from accounts.views import login, logout, profile, registration
 
 
 urlpatterns = [
-    url(r"^login/$", login, name="login"),
-    url(r"^logout/$", logout, name="logout"),
-    url(r"^profile/$", profile, name="profile"),
-    url(r"^register/$", registration, name="registration"),
-    url(r"^password-reset/", include(urls_reset))
+    path("login/", login, name="login"),
+    path("logout/", logout, name="logout"),
+    path("profile/", profile, name="profile"),
+    path("register/", registration, name="registration"),
+    path("password-reset/", include(urls_reset))
 ]
