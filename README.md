@@ -1,4 +1,4 @@
-[![Build Status](https://travis-ci.org/TravelTimN/django-ecommerce.svg?branch=master)](https://travis-ci.org/TravelTimN/django-ecommerce)
+[![Build Status](https://travis-ci.com/TravelTimN/django-ecommerce.svg?branch=main)](https://travis-ci.com/TravelTimN/django-ecommerce)
 
 ---
 
