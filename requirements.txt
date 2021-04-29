@@ -4,8 +4,8 @@ certifi==2019.6.16
 chardet==3.0.4
 colorama==0.2.7
 coverage==4.5.3
-dj-database-url==0.5.0
-Django==2.2.16
+dj-database-url==0.4.2
+Django==2.2.20
 django-cleanup==3.2.0
 django-forms-bootstrap==3.1.0
 django-materializecss-form==1.1.14
@@ -16,7 +16,7 @@ html5lib==0.999999999
 idna==2.8
 jmespath==0.9.4
 olefile==0.46
-Pillow==8.0.1
+Pillow==8.2.0
 postgres==3.0.0
 psycopg2-binary==2.8.4
 psycopg2-pool==1.1
@@ -30,5 +30,4 @@ sqlparse==0.3.0
 stripe==2.29.4
 urllib3==1.25.6
 webencodings==0.5.1
-wheel==0.36.1
 whitenoise==3.3.1
