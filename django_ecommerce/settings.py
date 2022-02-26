@@ -6,13 +6,11 @@ if os.path.exists("env.py"):
 
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
-SECRET_KEY = os.getenv("SECRET_KEY")
-
-development = True if os.getenv("DEVELOPMENT") else False
-DEBUG = development
+SECRET_KEY = os.environ.get("SECRET_KEY")
+DEBUG = os.environ.get("DEBUG")
 
 ALLOWED_HOSTS = []
-host = os.getenv("SITE_NAME")
+host = os.environ.get("SITE_NAME")
 if host:
     ALLOWED_HOSTS.append(host)
 
@@ -66,7 +64,7 @@ WSGI_APPLICATION = 'django_ecommerce.wsgi.application'
 
 if "DATABASE_URL" in os.environ:
     DATABASES = {
-        'default': dj_database_url.parse(os.getenv('DATABASE_URL'))
+        'default': dj_database_url.parse(os.environ.get('DATABASE_URL'))
     }
 else:
     print("Postgres URL not found, using sqlite instead")
@@ -130,13 +128,13 @@ DEFAULT_FILE_STORAGE = "custom_storages.MediaStorage"
 MEDIA_ROOT = os.path.join(BASE_DIR, "media")
 MEDIA_URL = "https://%s/%s/" % (AWS_S3_CUSTOM_DOMAIN, MEDIAFILES_LOCATION)
 
-STRIPE_PUBLISHABLE = os.getenv("STRIPE_PUBLISHABLE")
-STRIPE_SECRET = os.getenv("STRIPE_SECRET")
+STRIPE_PUBLISHABLE = os.environ.get("STRIPE_PUBLISHABLE")
+STRIPE_SECRET = os.environ.get("STRIPE_SECRET")
 
 MESSAGE_STORAGE = "django.contrib.messages.storage.session.SessionStorage"
 
 EMAIL_USE_TLS = True
 EMAIL_HOST = "smtp.gmail.com"
-EMAIL_HOST_USER = os.getenv("EMAIL_ADDRESS")
-EMAIL_HOST_PASSWORD = os.getenv("EMAIL_PASSWORD")
+EMAIL_HOST_USER = os.environ.get("EMAIL_ADDRESS")
+EMAIL_HOST_PASSWORD = os.environ.get("EMAIL_PASSWORD")
 EMAIL_PORT = 587
